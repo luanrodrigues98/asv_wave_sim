@@ -11,7 +11,7 @@
       <wave>
         <!-- `fft` wave parameters -->
         <algorithm>fft</algorithm>
-        <tile_size>256</tile_size>
+        <tile_size>500</tile_size>
         <cell_count>256</cell_count>
         <wind_speed>5.0</wind_speed>
         <wind_angle_deg>135</wind_angle_deg>
@@ -23,7 +23,7 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>materials/mesh_L256m_N256.dae</uri>
+            <uri>materials/mesh_L5000m_N5000.dae</uri>
           </mesh>
         </geometry>
         <!-- 
@@ -50,13 +50,12 @@
             filename="gz-waves1-waves-visual-system"
             name="gz::sim::systems::WavesVisual">
           <static>0</static>
-          <mesh_deformation_method>DYNAMIC_GEOMETRY</mesh_deformation_method>
-          <tiles_x>-0 0</tiles_x>
-          <tiles_y>-0 0</tiles_y>
+          <mesh_deformation_method>DYNAMIC_TEXTURE</mesh_deformation_method>
+          
           <wave>
             <!-- `fft` wave parameters -->
             <algorithm>fft</algorithm>
-            <tile_size>256</tile_size>
+            <tile_size>500</tile_size>
             <cell_count>256</cell_count>
             <wind_speed>5.0</wind_speed>
             <wind_angle_deg>135</wind_angle_deg>
@@ -68,13 +67,13 @@
             DYNAMIC_TEXTURE
           -->
 
-          <!-- shader program -->
+          <!-- shader program 
           <shader language="metal">
             <vertex>materials/waves_vs.metal</vertex>
             <fragment>materials/waves_fs.metal</fragment>
-          </shader>
+          </shader>-->
 
-          <!-- vertex shader params -->
+          <!-- vertex shader params 
           <param>
             <shader>vertex</shader>
             <name>world_matrix</name>
@@ -109,9 +108,9 @@
             <shader>vertex</shader>
             <name>t</name>
             <value>TIME</value>
-          </param>
+          </param> -->
 
-          <!-- pixel shader params -->
+          <!-- pixel shader params 
           <param>
             <shader>fragment</shader>
             <name>deepColor</name>
@@ -149,7 +148,7 @@
             <value>materials/skybox_lowres.dds</value>
             <type>texture_cube</type>
             <arg>1</arg>
-          </param>
+          </param> -->
 
         </plugin>
       </visual>
