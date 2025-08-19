@@ -31,16 +31,27 @@
           rather than a custom shader
         -->
         <material>
-          <ambient>0.0 0.05 0.8 0.92</ambient>
-          <diffuse>0.0 0.1 0.7 0.92</diffuse>
-          <specular>0.7 0.7 0.7 0.92</specular>
+          <!-- Neutros para não tingir a textura -->
+          <ambient>1.0 1.0 1.0 1.0</ambient>
+          <diffuse>1.0 1.0 1.0 1.0</diffuse>
+
+          <!-- Especular baixo típico de dielétrico (se aplicável na sua engine) -->
+          <specular>0.04 0.04 0.04 1.0</specular>
+
           <pbr>
             <metal>
-              <albedo_map>materials/water.jpg</albedo_map>
-              <normal_map>materials/wave_normals.dds</normal_map>
+              <albedo_map>materials/ackley_heatmap.png</albedo_map>
+
+              <!-- Opcional: desative ou reduza normals para mais “pureza” de cor -->
+              <!-- <normal_map>materials/wave_normals.dds</normal_map> -->
+
               <environment_map>materials/skybox_lowres.dds</environment_map>
-              <roughness>0.3</roughness>
-              <metalness>0.1</metalness>
+
+              <!-- Fosco moderado para evitar highlights que lavam a cor -->
+              <roughness>0.7</roughness>
+
+              <!-- Não metálico para preservar a cor no canal difuso -->
+              <metalness>0.0</metalness>
             </metal>
           </pbr>
         </material>
